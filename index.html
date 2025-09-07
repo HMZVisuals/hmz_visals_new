@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HMZ Visuals - Premier 360° Photo Booth Experience</title>
+    <meta name="description" content="Cape Town's interactive 360° photo booth for weddings, parties, and events. Professional slow-motion video capture with instant sharing. Book now!" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Professional Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <meta name="author" content="Lovable" />
+
+    <link rel="icon" type="image/jpeg" href="HMZ.jpg" />
+
+    <meta property="og:title" content="HMZ Visuals - 360° Photo Booth" />
+    <meta property="og:description" content="Your local premier 360° photo booth experience for weddings, parties, and events. Professional slow-motion capture with instant sharing." />
+    <meta name="keywords" content="Cape Town photo booth, 360 video booth hire, wedding photo booth, party entertainment, slow motion video, event photography" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+
+    <!-- Netlify Form for Booking -->
+    <form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="booking" />
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+      <p>
+        <label>First Name: <input type="text" name="firstName" /></label>
+      </p>
+      <p>
+        <label>Last Name: <input type="text" name="lastName" /></label>
+      </p>
+      <p>
+        <label>Email: <input type="email" name="email" /></label>
+      </p>
+      <p>
+        <label>Phone: <input type="tel" name="phone" /></label>
+      </p>
+      <p>
+        <label>Event Date: <input type="date" name="eventDate" /></label>
+      </p>
+      <p>
+        <label>Event Time: <input type="time" name="eventTime" /></label>
+      </p>
+      <p>
+        <label>Location: <input type="text" name="location" /></label>
+      </p>
+      <p>
+        <label>Hours: <select name="hours">
+          <option value="2">2 hours - R1,400</option>
+          <option value="3">3 hours - R2,000</option>
+          <option value="4">4 hours - R2,600</option>
+          <option value="5">5 hours - R3,200</option>
+          <option value="6">6 hours - R3,800</option>
+        </select></label>
+      </p>
+      <p>
+        <label>Camera Option: <select name="cameraOption">
+          <option value="own">Use my own device (Free)</option>
+          <option value="professional">Professional camera (+R150/hr)</option>
+        </select></label>
+      </p>
+      <p>
+        <label>Notes: <textarea name="notes"></textarea></label>
+      </p>
+      <p>
+        <button type="submit">Send Booking Request</button>
+      </p>
+    </form>
+
+    <!-- Netlify Form for Review -->
+    <form name="review" method="POST" data-netlify="true" netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="review" />
+      <p class="hidden">
+        <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
+      </p>
+      <p>
+        <label>Name: <input type="text" name="name" /></label>
+      </p>
+      <p>
+        <label>Review: <textarea name="review"></textarea></label>
+      </p>
+      <p>
+        <label>Allow Posting: <input type="checkbox" name="allowPosting" /></label>
+      </p>
+      <p>
+        <button type="submit">Submit Review</button>
+      </p>
+    </form>
+  </body>
+</html>
