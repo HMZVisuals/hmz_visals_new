@@ -1,0 +1,295 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Spin Snap Sparkle - 360° Photo Booth Design System
+All colors MUST be HSL. Glassmorphism & modern aesthetic.
+*/
+
+@layer base {
+  :root {
+    /* Dark Mode - Deep charcoal with dark grain texture */
+    --background: 210 11% 7%;
+    --foreground: 40 15% 92%;
+
+    --card: 210 11% 7%;
+    --card-foreground: 40 15% 92%;
+
+    --popover: 210 11% 7%;
+    --popover-foreground: 40 15% 92%;
+
+    /* Brand Colors - Muted gold/bronze luxury theme */
+    --primary: 38 85% 65%;
+    --primary-foreground: 210 11% 7%;
+    --primary-glow: 38 85% 75%;
+
+    --secondary: 25 45% 75%;
+    --secondary-foreground: 210 11% 7%;
+    --secondary-glow: 25 45% 85%;
+
+    --muted: 210 11% 15%;
+    --muted-foreground: 40 15% 65%;
+
+    --accent: 42 78% 58%;
+    --accent-foreground: 210 11% 7%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 40 15% 92%;
+
+    --border: 210 11% 20%;
+    --input: 210 11% 15%;
+    --ring: 38 85% 65%;
+
+    --radius: 1rem;
+
+    /* Dark Glassmorphism Colors */
+    --glass-bg: 210 11% 7% / 0.6;
+    --glass-border: 40 15% 92% / 0.1;
+    --glass-bg-overlay: 210 11% 7% / 0.8;
+    --glass-border-overlay: 40 15% 92% / 0.2;
+
+    /* Dark Mode Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(38 85% 65%) 0%, hsl(42 78% 58%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(210 11% 7% / 0.95) 0%, hsl(210 11% 15% / 0.9) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(210 11% 7% / 0.8) 0%, hsl(210 11% 15% / 0.6) 100%);
+    
+    /* Dark Mode Shadows & Effects */
+    --shadow-glow: 0 0 40px hsl(38 85% 65% / 0.3);
+    --shadow-glow-secondary: 0 0 40px hsl(42 78% 58% / 0.3);
+    --shadow-glass: 0 8px 32px hsl(210 11% 7% / 0.4);
+    
+    /* Dark grain texture overlay */
+    --grain-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+    
+    /* Animations */
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  /* Professional Light Mode - Off-white with grain texture */
+  .light {
+    --background: 40 15% 97%;
+    --foreground: 0 0% 10%;
+    --card: 40 15% 99%;
+    --card-foreground: 0 0% 10%;
+    --popover: 40 15% 99%;
+    --popover-foreground: 0 0% 10%;
+    
+    /* Brand colors - muted gold/bronze for luxury feel */
+    --primary: 38 85% 65%;
+    --primary-foreground: 40 15% 97%;
+    --primary-glow: 38 85% 75%;
+    
+    --secondary: 25 45% 75%;
+    --secondary-foreground: 0 0% 10%;
+    --secondary-glow: 25 45% 85%;
+    
+    --muted: 40 15% 94%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 42 78% 58%;
+    --accent-foreground: 40 15% 97%;
+    --border: 40 15% 88%;
+    --input: 40 15% 92%;
+    --ring: 38 85% 65%;
+    
+    /* Light mode glassmorphism - enhanced */
+    --glass-bg: 40 15% 99% / 0.7;
+    --glass-border: 0 0% 10% / 0.08;
+    --glass-bg-overlay: 40 15% 99% / 0.9;
+    --glass-border-overlay: 0 0% 10% / 0.12;
+    
+    /* Light mode gradients - subtle and warm */
+    --gradient-primary: linear-gradient(135deg, hsl(38 85% 65%) 0%, hsl(42 78% 58%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(40 15% 97% / 0.95) 0%, hsl(40 15% 99% / 0.9) 100%);
+    --gradient-card: linear-gradient(135deg, hsl(40 15% 99% / 0.9) 0%, hsl(40 15% 94% / 0.7) 100%);
+    
+    /* Light mode shadows - soft and warm */
+    --shadow-glow: 0 0 40px hsl(38 85% 65% / 0.2);
+    --shadow-glow-secondary: 0 0 40px hsl(42 78% 58% / 0.2);
+    --shadow-glass: 0 8px 32px hsl(0 0% 10% / 0.08);
+    
+    /* Light grain texture overlay */
+    --grain-texture: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter overflow-x-hidden;
+    position: relative;
+    transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Add grain texture overlay for both modes */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: var(--grain-texture);
+    pointer-events: none;
+    z-index: 1;
+    opacity: 1;
+    transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  /* Professional glassmorphism - Enhanced for new theme */
+  .glass {
+    background: hsl(var(--glass-bg));
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .glass-card {
+    background: var(--gradient-card);
+    backdrop-filter: blur(24px);
+    border: 1px solid hsl(var(--glass-border));
+    box-shadow: var(--shadow-glass);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  /* Enhanced glass effect with luxury finish */
+  .glass-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.4), transparent);
+  }
+  
+  .glass-card:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-2px);
+  }
+  
+  /* Typography hierarchy - Professional and elegant */
+  .heading-display {
+    @apply font-pierson text-foreground font-medium;
+    letter-spacing: -0.02em;
+  }
+  
+  .heading-accent {
+    @apply font-black-mango text-primary font-bold;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  
+  .body-elegant {
+    @apply font-poppins text-muted-foreground;
+    line-height: 1.7;
+  }
+  
+  .text-charcoal {
+    @apply text-foreground;
+  }
+  
+  /* Luxury button styles */
+  .btn-luxury {
+    @apply bg-primary text-primary-foreground font-black-mango font-semibold;
+    letter-spacing: 0.02em;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .btn-luxury:hover {
+    box-shadow: var(--shadow-glow);
+    transform: translateY(-1px);
+  }
+
+  /* Animation classes */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite alternate;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out;
+  }
+
+  /* Text gradient */
+  .text-gradient {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Morphing blob background */
+  .blob-bg::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-primary);
+    border-radius: 50% 40% 60% 30%;
+    opacity: 0.1;
+    animation: morphing 8s ease-in-out infinite;
+    z-index: -1;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 20px hsl(280 100% 70% / 0.5); }
+  to { box-shadow: 0 0 40px hsl(280 100% 70% / 0.8), 0 0 60px hsl(195 100% 50% / 0.4); }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes morphing {
+  0%, 100% { border-radius: 50% 40% 60% 30%; transform: rotate(0deg) scale(1); }
+  25% { border-radius: 30% 60% 40% 70%; transform: rotate(90deg) scale(1.1); }
+  50% { border-radius: 60% 30% 70% 40%; transform: rotate(180deg) scale(0.9); }
+  75% { border-radius: 40% 70% 30% 60%; transform: rotate(270deg) scale(1.05); }
+}
