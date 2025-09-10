@@ -40,7 +40,7 @@ const Footer = () => {
                 <div className="text-secondary group-hover:scale-110 transition-transform">🎵</div>
               </a>
               <a 
-                href="https://wa.me/27123456789" 
+                href="https://wa.me/27813641373" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="glass p-3 rounded-lg hover:bg-white/20 transition-colors group"
@@ -99,7 +99,7 @@ const Footer = () => {
             <div className="space-y-3">
               <div className="flex items-center">
                 <Phone className="h-4 w-4 text-primary mr-3" />
-                <span className="text-muted-foreground">+27 123 456 789PLACEHOLDER</span>
+                <span className="text-muted-foreground">+27 81 364 1373</span>
               </div>
               <div className="flex items-center">
                 <Mail className="h-4 w-4 text-primary mr-3" />
