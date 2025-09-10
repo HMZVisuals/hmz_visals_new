@@ -85,7 +85,7 @@ const TestimonialsSection = () => {
 
 Thank you for your feedback!`;
 
-    const whatsappUrl = `https://wa.me/27794137016?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/27813641373?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     toast({
