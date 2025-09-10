@@ -140,7 +140,7 @@ const Footer = () => {
 
           {/* Developer Credit */}
           <div className="text-center text-muted-foreground text-sm mt-4">
-            Developed by <a href="https://github.com/ANONYMOUSx46" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">ANONYMOUSx46</a> on GitHub
+            Developed by <a href="https://github.com/ANONYMOUSx46" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">Liam De Wet</a> on GitHub
           </div>
         </div>
 
