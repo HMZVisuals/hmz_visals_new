@@ -81,7 +81,7 @@ ${formData.notes ? `💬 Notes: ${formData.notes}` : ""}
 
 Looking forward to hearing from you!`;
 
-    const whatsappUrl = `https://wa.me/27794137016?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/27813641373?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     toast({
@@ -259,7 +259,7 @@ Looking forward to hearing from you!`;
               <h3 className="text-xl font-bold mb-4 text-gradient">Need Help Booking?</h3>
               <div className="space-y-4">
                 <a
-                  href="https://wa.me/27794137016"
+                  href="https://wa.me/27813641373"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center p-3 glass rounded-lg hover:bg-white/20 transition-colors group"
