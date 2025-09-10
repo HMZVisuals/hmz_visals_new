@@ -57,9 +57,25 @@ const TestimonialsSection = () => {
     setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
   };
 
-  const handleReviewSubmit = (e: React.FormEvent) => {
+  const handleReviewSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
+    // Submit to Netlify Forms
+    const formDataToSubmit = new FormData();
+    formDataToSubmit.append('form-name', 'review');
+    formDataToSubmit.append('name', reviewForm.name);
+    formDataToSubmit.append('review', reviewForm.review);
+    formDataToSubmit.append('allowPosting', reviewForm.allowPosting.toString());
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        body: formDataToSubmit,
+      });
+    } catch (error) {
+      console.error('Error submitting to Netlify:', error);
+    }
+
     // Create WhatsApp message for review
     const message = `New Review Submission:
 
@@ -69,7 +85,7 @@ const TestimonialsSection = () => {
 
 Thank you for your feedback!`;
 
-    const whatsappUrl = `https://wa.me/27123456789?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/27794137016?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     toast({
@@ -100,7 +116,7 @@ Thank you for your feedback!`;
             <div className="glass-card p-8 rounded-2xl min-h-[400px] flex flex-col justify-between">
               {/* Quote Icon */}
               <Quote className="h-12 w-12 text-primary/30 mb-6" />
-              
+
               {/* Testimonial Content */}
               <div className="flex-1">
                 <div className="flex items-center mb-4">
@@ -108,11 +124,11 @@ Thank you for your feedback!`;
                     <Star key={i} className="h-5 w-5 text-accent fill-current" />
                   ))}
                 </div>
-                
+
                 <p className="text-lg text-muted-foreground leading-relaxed mb-6 italic">
                   "{testimonials[currentTestimonial].text}"
                 </p>
-                
+
                 <div className="border-t border-white/10 pt-6">
                   <h4 className="font-bold text-foreground text-lg">
                     {testimonials[currentTestimonial].name}
