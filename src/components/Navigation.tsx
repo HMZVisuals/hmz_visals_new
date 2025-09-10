@@ -83,7 +83,7 @@ const Navigation = () => {
               <Instagram className="h-5 w-5" />
             </a>
             <a 
-              href="https://wa.me/27123456789" 
+              href="https://wa.me/27813641373" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-foreground hover:text-secondary transition-colors"
