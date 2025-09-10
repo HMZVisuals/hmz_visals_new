@@ -22,21 +22,44 @@ const BookingSection = () => {
     notes: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     // Calculate pricing
     const basePrice = 1400;
     const extraHourPrice = 600;
     const cameraPrice = 150;
     const hours = parseInt(formData.hours);
-    
+
     let total = basePrice;
     if (hours > 2) {
       total += (hours - 2) * extraHourPrice;
     }
     if (formData.cameraOption === "professional") {
       total += hours * cameraPrice;
+    }
+
+    // Submit to Netlify Forms
+    const formDataToSubmit = new FormData();
+    formDataToSubmit.append('form-name', 'booking');
+    formDataToSubmit.append('firstName', formData.firstName);
+    formDataToSubmit.append('lastName', formData.lastName);
+    formDataToSubmit.append('email', formData.email);
+    formDataToSubmit.append('phone', formData.phone);
+    formDataToSubmit.append('eventDate', formData.eventDate);
+    formDataToSubmit.append('eventTime', formData.eventTime);
+    formDataToSubmit.append('location', formData.location);
+    formDataToSubmit.append('hours', formData.hours);
+    formDataToSubmit.append('cameraOption', formData.cameraOption);
+    formDataToSubmit.append('notes', formData.notes);
+
+    try {
+      await fetch('/', {
+        method: 'POST',
+        body: formDataToSubmit,
+      });
+    } catch (error) {
+      console.error('Error submitting to Netlify:', error);
     }
 
     // Create WhatsApp message
@@ -58,7 +81,7 @@ ${formData.notes ? `💬 Notes: ${formData.notes}` : ""}
 
 Looking forward to hearing from you!`;
 
-    const whatsappUrl = `https://wa.me/27813641373?text=${encodeURIComponent(message)}`;
+    const whatsappUrl = `https://wa.me/27794137016?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
 
     toast({
@@ -235,9 +258,9 @@ Looking forward to hearing from you!`;
             <div className="glass-card p-6 rounded-xl">
               <h3 className="text-xl font-bold mb-4 text-gradient">Need Help Booking?</h3>
               <div className="space-y-4">
-                <a 
-                  href="https://wa.me/27813641373" 
-                  target="_blank" 
+                <a
+                  href="https://wa.me/27794137016"
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center p-3 glass rounded-lg hover:bg-white/20 transition-colors group"
                 >
@@ -250,7 +273,7 @@ Looking forward to hearing from you!`;
                 <div className="flex items-center p-3 glass rounded-lg">
                   <Phone className="h-5 w-5 text-primary mr-3" />
                   <div>
-                    <div className="font-semibold">+27 123 456 789PLACEHOLDER</div>
+                    <div className="font-semibold">+27 813 641 373</div>
                     <div className="text-sm text-muted-foreground">Call or SMS</div>
                   </div>
                 </div>
