@@ -10,7 +10,7 @@ const FloatingWhatsApp = () => {
     <div className="fixed bottom-6 right-6 z-50 group">
       {/* WhatsApp Button */}
       <a
-        href="https://wa.me/27123456789?text=Hi! I'm interested in your 360° photo booth service. Can you help me with more information?"
+        href="https://wa.me/27813641373?text=Hi! I'm interested in your 360° photo booth service. Can you help me with more information?"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center glass-card p-4 rounded-full hover:scale-110 transition-all duration-300 shadow-glow animate-float group-hover:rounded-2xl group-hover:pr-6"
